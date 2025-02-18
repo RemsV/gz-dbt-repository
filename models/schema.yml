@@ -8,9 +8,55 @@ sources:
           - name: sales
             identifier: raw_gz_sales
             description: Revenue par produit dans chaque commande
+            loaded_at_field: "CAST(date_date AS TIMESTAMP)"
+            freshness: 
+              warn_after:
+                count: 90
+                period: day
+            
+            columns:
+              - name: date_date
+                description: date de vente
+              - name: orders_id
+                description: numéro de commande
+              - name: pdt_id
+                description: numéro de produit
+              - name: revenue
+                description: prix de vente
+              - name: quantity
+                description: quantité
+              - name: "(orders_id || '-' || pdt_id)"
+                description: primary key of the table
+                tests:
+                - unique
+                - not_null
+
           - name: product
             identifier: raw_gz_product
             description: Liste des produits avec leur prix d'achat
+            columns:
+              - name: products_id
+                description: numéro de produit
+                tests:
+                  - not_null
+                  - unique
+              - name: purchSE_PRICE
+                description: prix d'achat
+
           - name: ship
             identifier: raw_gz_ship
             description: Frais de livraisons par commande
+            columns:
+              - name: orders_id
+                description: numéro de commande
+                tests:
+                  - not_null
+                  - unique
+              - name: shipping_fee
+                description: coût de livraison
+              - name: shipping_fee1
+                description: coût de livraison
+              - name: logCost
+                description: coût de logistique
+              - name: ship_cost
+                description: coût de transporteur
