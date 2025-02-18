@@ -2,8 +2,15 @@
 version: 2
 
 sources:
-    - name: gz_raw_data
+    - name: raw
+      schema: gz_raw_data
       tables:
-          - name: raw_gz_sales
-          - name: raw_gz_product
-          - name: raw_gz_ship
+          - name: sales
+            identifier: raw_gz_sales
+            description: Revenue par produit dans chaque commande
+          - name: product
+            identifier: raw_gz_product
+            description: Liste des produits avec leur prix d'achat
+          - name: ship
+            identifier: raw_gz_ship
+            description: Frais de livraisons par commande
