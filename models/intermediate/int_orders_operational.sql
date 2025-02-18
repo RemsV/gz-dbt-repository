@@ -20,5 +20,8 @@ ROUND((margin + shipping_fee - logcost - ship_cost),2) AS operational_margin,
 revenue,
 quantity,
 purchase_cost,
-margin
+margin,
+shipping_fee,
+logcost,
+ship_cost
 FROM table_1
