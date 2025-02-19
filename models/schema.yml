@@ -156,3 +156,28 @@ sources:
                 tests:
                 - unique
                 - not_null
+
+          
+models:
+   - name: int_campaigns
+     description: coût des publicités par campagnes
+     columns:
+         - name: date_date
+           description: date de la campagne
+         - name: paid_source
+           description: plateforme 
+         - name: campaign_key
+           description: clé de la campagne
+         - name: campaign_name
+           description: nom de la campagne
+         - name: ads_cost
+           description: coût de la publicité
+         - name: impression
+           description: nombre d'impression de la campagne
+         - name: click
+           description: nombre de clics de la campagne
+         - name: "(date_date || '-' || campaign_key)"
+           description: primary key of the table
+           tests:
+              - unique
+              - not_null
