@@ -203,3 +203,11 @@ models:
            tests:
             - unique
             - not_null
+
+   - name: finance_campaigns_month
+     columns:
+         - name: datemonth
+           description: date de la campagne
+           tests:
+            - unique
+            - not_null
