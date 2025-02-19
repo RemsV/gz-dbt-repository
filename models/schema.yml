@@ -60,3 +60,99 @@ sources:
                 description: coût de logistique
               - name: ship_cost
                 description: coût de transporteur
+
+          - name: adwords
+            identifier: raw_gz_adwords
+            description: coût des publicités google par campagnes
+            columns:
+              - name: date_date
+                description: date de la campagne
+              - name: paid_source
+                description: plateforme 
+              - name: campaign_key
+                description: clé de la campagne
+              - name: camPGN_name
+                description: nom de la campagne
+              - name: ads_cost
+                description: coût de la publicité
+              - name: impression
+                description: nombre d'impression de la campagne
+              - name: click
+                description: nombre de clics de la campagne
+              - name: "(date_date || '-' || campaign_key)"
+                description: primary key of the table
+                tests:
+                - unique
+                - not_null
+
+          - name: bing
+            identifier: raw_gz_bing
+            description: coût des publicités bing par campagnes
+            columns:
+              - name: date_date
+                description: date de la campagne
+              - name: paid_source
+                description: plateforme 
+              - name: campaign_key
+                description: clé de la campagne
+              - name: camPGN_name
+                description: nom de la campagne
+              - name: ads_cost
+                description: coût de la publicité
+              - name: impression
+                description: nombre d'impression de la campagne
+              - name: click
+                description: nombre de clics de la campagne
+              - name: "(date_date || '-' || campaign_key)"
+                description: primary key of the table
+                tests:
+                - unique
+                - not_null
+
+          - name: criteo
+            identifier: raw_gz_criteo
+            description: coût des publicités criteo par campagnes
+            columns:
+              - name: date_date
+                description: date de la campagne
+              - name: paid_source
+                description: plateforme 
+              - name: campaign_key
+                description: clé de la campagne
+              - name: camPGN_name
+                description: nom de la campagne
+              - name: ads_cost
+                description: coût de la publicité
+              - name: impression
+                description: nombre d'impression de la campagne
+              - name: click
+                description: nombre de clics de la campagne
+              - name: "(date_date || '-' || campaign_key)"
+                description: primary key of the table
+                tests:
+                - unique
+                - not_null
+
+          - name: facebook
+            identifier: raw_gz_facebook
+            description: coût des publicités facebook par campagnes
+            columns:
+              - name: date_date
+                description: date de la campagne
+              - name: paid_source
+                description: plateforme 
+              - name: campaign_key
+                description: clé de la campagne
+              - name: camPGN_name
+                description: nom de la campagne
+              - name: ads_cost
+                description: coût de la publicité
+              - name: impression
+                description: nombre d'impression de la campagne
+              - name: click
+                description: nombre de clics de la campagne
+              - name: "(date_date || '-' || campaign_key)"
+                description: primary key of the table
+                tests:
+                - unique
+                - not_null
