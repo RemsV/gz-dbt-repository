@@ -19,7 +19,7 @@ from table_1)
 select
 *,
 ROUND(revenue - purchase_cost,2) AS margin,
-{{ margin_percent('revenue', 'purchase_cost') }} AS margin_percent
+{{ margin_percent('revenue', 'purchase_cost')}} AS margin_percent
 FROM table_2
 
 
